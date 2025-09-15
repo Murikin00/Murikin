@@ -1,0 +1,139 @@
+/* Resetando alguns estilos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('coracao.jpg'); /* Usando a imagem coracao.png como fundo */
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  color: #fff;
+  overflow: hidden; /* Impede a barra de rolagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  color: #0026ff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#inputSection {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar a legibilidade */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: #333;
+  color: #1100fa;
+}
+
+input:focus {
+  border-color: #1e90ff; /* Cor azul quando o campo está em foco */
+  outline: none;
+}
+
+button {
+  background-color: #1e90ff;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4682b4; /* Azul mais escuro ao passar o mouse */
+}
+
+#message {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+#emoji {
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+#hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Ajuste para formar corações corretamente */
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #1e90ff;
+  transform: rotate(45deg); /* Rotaciona para dar o formato de coração */
+  animation: float 5s infinite;
+  clip-path: polygon(50% 0%, 0% 40%, 50% 100%, 100% 40%); /* Forma do coração */
+}
+
+.heart::before, .heart::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Círculos para as "volutas" do coração */
+  background-color: #1e90ff;
+}
+
+.heart::before {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.heart::after {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-150px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
